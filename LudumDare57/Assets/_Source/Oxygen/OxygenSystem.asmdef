@@ -1,10 +1,8 @@
 {
-    "name": "FlashlightInputSystem",
-    "rootNamespace": "FlashlightInputSystem",
+    "name": "OxygenSystem",
+    "rootNamespace": "OxygenSystem",
     "references": [
-        "GUID:55a343f8dbddbf34ea365041acc2893c",
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:4626180b538ba494197d744e5b252bab"
+        "GUID:222c5386a7159a0419df8294d84e3e35"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
