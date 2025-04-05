@@ -1,12 +1,8 @@
 {
-    "name": "Core",
-    "rootNamespace": "Core",
+    "name": "FlashlightSystem",
+    "rootNamespace": "FlashlightSystem",
     "references": [
-        "GUID:4626180b538ba494197d744e5b252bab",
-        "GUID:50fa4a53143855b46bb5aa8316d3141a",
-        "GUID:d324aa5fcf23a7945bd71a5f816f9acb",
-        "GUID:55a343f8dbddbf34ea365041acc2893c",
-        "GUID:ae55390708e8d904299902c8aa795c83"
+        "GUID:15fc0a57446b3144c949da3e2b9737a9"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

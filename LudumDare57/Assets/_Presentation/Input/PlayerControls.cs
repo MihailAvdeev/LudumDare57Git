@@ -114,6 +114,89 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Flashlight"",
+            ""id"": ""f73ff025-a49c-4b31-a984-a6157daeb752"",
+            ""actions"": [
+                {
+                    ""name"": ""Switch Mode"",
+                    ""type"": ""Value"",
+                    ""id"": ""73537969-38b2-4641-8a9f-282baf95ad7d"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""QE"",
+                    ""id"": ""54e3b71c-9c38-4ec3-a8a7-c65068832900"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch Mode"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""7d674593-ffbc-438d-938e-55fed4fec551"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch Mode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""b514ce59-223f-43da-8512-53e058db2450"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch Mode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Mouse Scroll"",
+                    ""id"": ""7dc21195-605c-486a-a9ff-e495f9dda8e9"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch Mode"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""0157a720-a847-4b77-964b-c0b0368fc932"",
+                    ""path"": ""<Mouse>/scroll/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch Mode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""d1d5b168-143b-4463-8888-5b1fe417c5cd"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch Mode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -122,6 +205,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_Move = m_Movement.FindAction("Move", throwIfNotFound: true);
         m_Movement_Look = m_Movement.FindAction("Look", throwIfNotFound: true);
+        // Flashlight
+        m_Flashlight = asset.FindActionMap("Flashlight", throwIfNotFound: true);
+        m_Flashlight_SwitchMode = m_Flashlight.FindAction("Switch Mode", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -233,9 +319,59 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public MovementActions @Movement => new MovementActions(this);
+
+    // Flashlight
+    private readonly InputActionMap m_Flashlight;
+    private List<IFlashlightActions> m_FlashlightActionsCallbackInterfaces = new List<IFlashlightActions>();
+    private readonly InputAction m_Flashlight_SwitchMode;
+    public struct FlashlightActions
+    {
+        private @PlayerControls m_Wrapper;
+        public FlashlightActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SwitchMode => m_Wrapper.m_Flashlight_SwitchMode;
+        public InputActionMap Get() { return m_Wrapper.m_Flashlight; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(FlashlightActions set) { return set.Get(); }
+        public void AddCallbacks(IFlashlightActions instance)
+        {
+            if (instance == null || m_Wrapper.m_FlashlightActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_FlashlightActionsCallbackInterfaces.Add(instance);
+            @SwitchMode.started += instance.OnSwitchMode;
+            @SwitchMode.performed += instance.OnSwitchMode;
+            @SwitchMode.canceled += instance.OnSwitchMode;
+        }
+
+        private void UnregisterCallbacks(IFlashlightActions instance)
+        {
+            @SwitchMode.started -= instance.OnSwitchMode;
+            @SwitchMode.performed -= instance.OnSwitchMode;
+            @SwitchMode.canceled -= instance.OnSwitchMode;
+        }
+
+        public void RemoveCallbacks(IFlashlightActions instance)
+        {
+            if (m_Wrapper.m_FlashlightActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IFlashlightActions instance)
+        {
+            foreach (var item in m_Wrapper.m_FlashlightActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_FlashlightActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public FlashlightActions @Flashlight => new FlashlightActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+    }
+    public interface IFlashlightActions
+    {
+        void OnSwitchMode(InputAction.CallbackContext context);
     }
 }
