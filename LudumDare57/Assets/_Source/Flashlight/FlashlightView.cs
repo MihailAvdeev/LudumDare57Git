@@ -1,3 +1,5 @@
+using Cinemachine;
+using MovementSystem;
 using System;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -10,15 +12,21 @@ namespace FlashlightSystem
         [SerializeField] private Light2D coneLight;
 
         [Space]
-        [SerializeField] private FlashlightMode switchedOffMode;
         [SerializeField] private FlashlightMode[] flashlightModes = new FlashlightMode[1];
         [SerializeField] private int defaultModeIndex;
+
+        [Space]
+        [SerializeField] private CinemachineVirtualCamera switchedOffVirtualCamera;
+        [SerializeField] private LookController lookController;
 
         public int CurrentModeIndex { get; private set; }
         public int LastModeIndex { get { return flashlightModes.Length - 1; } }
 
+        private CinemachineVirtualCamera _currentVirtualCamera;
+
         private void Start()
         {
+            _currentVirtualCamera = switchedOffVirtualCamera;
             SwitchFlashlightMode(defaultModeIndex);
         }
 
@@ -32,7 +40,14 @@ namespace FlashlightSystem
             {
                 if (index == -1)
                 {
-                    SetFlashlightMode(switchedOffMode);
+                    radiusLight.enabled = false;
+                    coneLight.enabled = false;
+
+                    _currentVirtualCamera.enabled = false;
+                    _currentVirtualCamera = switchedOffVirtualCamera;
+                    _currentVirtualCamera.enabled = true;
+
+                    lookController.AimDistance = 0f;
                 }
                 else
                 {
@@ -45,38 +60,56 @@ namespace FlashlightSystem
 
         private void SetFlashlightMode(FlashlightMode mode)
         {
-            radiusLight.falloffIntensity = mode.RadiusLightFalloffStrength;
-            radiusLight.pointLightOuterRadius = mode.RadiusLightOuterRadius;
+            radiusLight.enabled = true;
+            coneLight.enabled = true;
 
-            coneLight.enabled = mode.ConeLightEnabled;
+            _currentVirtualCamera.enabled = false;
+            _currentVirtualCamera = mode.VirtualCamera;
+            _currentVirtualCamera.enabled = true;
+
+            radiusLight.pointLightOuterRadius = mode.RadiusLightOuterRadius;
+            radiusLight.pointLightInnerRadius = mode.RadiusLightInnerRadius;
+            radiusLight.falloffIntensity = mode.RadiusLightFalloffStrength;
+
             coneLight.pointLightOuterRadius = mode.ConeLightOuterRadius;
+            coneLight.pointLightInnerRadius = mode.ConeLightInnerRadius;
             coneLight.pointLightInnerAngle = mode.ConeLightInnerAngle;
             coneLight.pointLightOuterAngle = mode.ConeLightOuterAngle;
             coneLight.falloffIntensity = mode.ConeLightFalloffStrength;
+
+            lookController.AimDistance = mode.AimDistance;
         }
 
         [Serializable]
         private struct FlashlightMode
         {
+            [SerializeField] private float radiusLightInnerRadius;
             [SerializeField] private float radiusLightOuterRadius;
             [SerializeField, Range(0f, 1.0f)] private float radiusLightFalloffStrength;
 
             [Space]
-            [SerializeField] private bool coneLightEnabled;
+            [SerializeField] private float coneLightInnerRadius;
             [SerializeField] private float coneLightOuterRadius;
             [SerializeField, Range(0f, 360.0f)] private float coneLightInnerAngle;
             [SerializeField, Range(0f, 360.0f)] private float coneLightOuterAngle;
             [SerializeField, Range(0f, 1.0f)] private float coneLightFalloffStrength;
 
+            [Space]
+            [SerializeField] private CinemachineVirtualCamera virtualCamera;
+            [SerializeField] private float aimDistance;
+
+            public readonly float RadiusLightInnerRadius { get { return radiusLightInnerRadius; } }
             public readonly float RadiusLightOuterRadius { get { return radiusLightOuterRadius; } }
             public readonly float RadiusLightFalloffStrength { get { return radiusLightFalloffStrength; } }
 
-            public readonly bool ConeLightEnabled { get { return coneLightEnabled; } }
+            public readonly float ConeLightInnerRadius {  get { return coneLightInnerRadius; } }
             public readonly float ConeLightOuterRadius {  get { return coneLightOuterRadius; } }
             public readonly float ConeLightInnerAngle {  get { return coneLightInnerAngle; } }
             public readonly float ConeLightOuterAngle {  get { return coneLightOuterAngle; } }
             public readonly float ConeLightFalloffStrength {  get { return coneLightFalloffStrength; } }
 
+            public readonly CinemachineVirtualCamera VirtualCamera { get { return virtualCamera; } }
+            public readonly float AimDistance { get { return aimDistance; } }
         }
     }
 }
