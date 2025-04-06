@@ -21,7 +21,7 @@ namespace MovementSystem
             transform.eulerAngles = new(0f, 0f, angle);
 
             aimTarget.localPosition = direction * AimDistance;
-
+            /*
             if (direction.y < -0.01f)
             {
                 body.localScale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -29,7 +29,7 @@ namespace MovementSystem
             else if (direction.y > 0.01f)
             {
                 body.localScale = new Vector3(1.0f, -1.0f, 1.0f);
-            }
+            }*/
         }
     }
 }

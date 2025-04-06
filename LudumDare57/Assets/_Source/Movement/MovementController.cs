@@ -8,6 +8,8 @@ namespace MovementSystem
         [SerializeField] private float _maxSpeed;
         [SerializeField] private float _acceleration;
         [SerializeField] private float _deceleration;
+        [SerializeField] private Transform torso;
+        [SerializeField] private Transform body;
 
         private Rigidbody2D _rigidbody;
 
@@ -40,13 +42,16 @@ namespace MovementSystem
         {
             _targetVelocity = direction * _maxSpeed;
 
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            body.eulerAngles = new(0f, 0f, angle);
+            
             if (direction.x < -0.01f)
             {
-                _rigidbody.transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+                torso.localScale = new Vector3(1.0f, -1.0f, 1.0f);
             }
             else if(direction.x > 0.01f)
             {
-                _rigidbody.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                torso.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             }
         }
     }
