@@ -39,6 +39,15 @@ namespace MovementSystem
         public void Move(Vector2 direction)
         {
             _targetVelocity = direction * _maxSpeed;
+
+            if (direction.x < -0.01f)
+            {
+                _rigidbody.transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+            }
+            else if(direction.x > 0.01f)
+            {
+                _rigidbody.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            }
         }
     }
 }
