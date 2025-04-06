@@ -1,0 +1,17 @@
+{
+    "name": "OxygenCylinderSystem",
+    "rootNamespace": "OxygenCylinderSystem",
+    "references": [
+        "GUID:f9a1cc6b2a298e741b12c65f62e260c6",
+        "GUID:34ccc1e9c5abf0747920a93d87ca0f52"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
