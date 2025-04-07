@@ -1,18 +1,14 @@
 using UnityEngine;
 using Pathfinding;
-using System.Collections;
+using System;
 
 namespace EnemySystem
 {
     [RequireComponent(typeof(Seeker)), RequireComponent(typeof(Rigidbody2D))]
-    public class EnemyAI : MonoBehaviour
+    public class EnemyMovement : MonoBehaviour
     {
-        [SerializeField] private Transform player;
-
         [SerializeField] private float speed;
         [SerializeField] private float nextWaypointDistance;
-
-        [SerializeField] private float pathUpdateTime;
 
         [SerializeField] private Transform visuals;
 
@@ -23,12 +19,12 @@ namespace EnemySystem
         private Seeker _seeker;
         private Rigidbody2D _rigidbody;
 
-        private void Start()
+        public event Action OnEndOfPathReached;
+
+        private void Awake()
         {
             _seeker = GetComponent<Seeker>();
             _rigidbody = GetComponent<Rigidbody2D>();
-
-            StartCoroutine(UpdatingPath());
         }
 
         private void Update()
@@ -39,6 +35,8 @@ namespace EnemySystem
             if (_currentWaypoint >= _path.vectorPath.Count)
             {
                 _reachedEndOfPath = true;
+
+                OnEndOfPathReached?.Invoke();
             }
             else
             {
@@ -51,7 +49,8 @@ namespace EnemySystem
                 Vector2 force = direction * (speed * Time.deltaTime);
 
                 float targetRotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                _rigidbody.rotation = Mathf.MoveTowardsAngle(_rigidbody.rotation, targetRotation, 100.0f * Time.deltaTime);
+                float actualRotation = Mathf.MoveTowardsAngle(visuals.eulerAngles.z, targetRotation, 100.0f * Time.deltaTime);
+                visuals.eulerAngles = new Vector3(0f, 0f, actualRotation);
 
                 _rigidbody.AddForce(force);
 
@@ -61,16 +60,22 @@ namespace EnemySystem
                 {
                     _currentWaypoint++;
                 }
-                
-                if (force.x >= 0.01f)
+                /*
+                if (direction.x >= 0.5f)
                 {
                     visuals.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 }
-                else if (force.x <= -0.01f)
+                else if (direction.x <= -0.5f)
                 {
                     visuals.localScale = new Vector3(1.0f, -1.0f, 1.0f);
-                }
+                }*/
             }
+        }
+
+        public void MoveToPosition(Vector3 position)
+        {
+            if (_seeker.IsDone())
+                _seeker.StartPath(_rigidbody.position, position, OnPathComplete);
         }
 
         private void OnPathComplete(Path path)
@@ -79,21 +84,6 @@ namespace EnemySystem
             {
                 _path = path;
                 _currentWaypoint = 0;
-            }
-        }
-
-        private IEnumerator UpdatingPath()
-        {
-            WaitForSeconds wait = new(pathUpdateTime);
-
-            while (true)
-            {
-                if (_seeker.IsDone())
-                {
-                    _seeker.StartPath(_rigidbody.position, player.position, OnPathComplete);
-                }
-
-                yield return wait;
             }
         }
     }

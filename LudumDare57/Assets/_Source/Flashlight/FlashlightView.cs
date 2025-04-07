@@ -1,4 +1,5 @@
 using Cinemachine;
+using EnemySystem;
 using MovementSystem;
 using System;
 using UnityEngine;
@@ -17,7 +18,11 @@ namespace FlashlightSystem
 
         [Space]
         [SerializeField] private CinemachineVirtualCamera switchedOffVirtualCamera;
+        [SerializeField] private float switchedOffPerceptionDistance;
         [SerializeField] private LookController lookController;
+
+        [Space]
+        [SerializeField] private PercievedObject percievedObject;
 
         public int CurrentModeIndex { get; private set; }
         public int LastModeIndex { get { return flashlightModes.Length - 1; } }
@@ -48,6 +53,8 @@ namespace FlashlightSystem
                     _currentVirtualCamera.enabled = true;
 
                     lookController.AimDistance = 0f;
+
+                    percievedObject.Distance = switchedOffPerceptionDistance;
                 }
                 else
                 {
@@ -78,6 +85,8 @@ namespace FlashlightSystem
             coneLight.falloffIntensity = mode.ConeLightFalloffStrength;
 
             lookController.AimDistance = mode.AimDistance;
+
+            percievedObject.Distance = mode.PerceptionDistance;
         }
 
         [Serializable]
@@ -98,6 +107,9 @@ namespace FlashlightSystem
             [SerializeField] private CinemachineVirtualCamera virtualCamera;
             [SerializeField] private float aimDistance;
 
+            [Space]
+            [SerializeField] private float perceptionDistance;
+
             public readonly float RadiusLightInnerRadius { get { return radiusLightInnerRadius; } }
             public readonly float RadiusLightOuterRadius { get { return radiusLightOuterRadius; } }
             public readonly float RadiusLightFalloffStrength { get { return radiusLightFalloffStrength; } }
@@ -110,6 +122,8 @@ namespace FlashlightSystem
 
             public readonly CinemachineVirtualCamera VirtualCamera { get { return virtualCamera; } }
             public readonly float AimDistance { get { return aimDistance; } }
+
+            public readonly float PerceptionDistance { get { return perceptionDistance; } }
         }
     }
 }

@@ -33,8 +33,6 @@ namespace OxygenSystem
 
                 if (timer >= _inhalesInterval)
                 {
-                    Debug.Log("Inhale");
-
                     timer -= _inhalesInterval;
 
                     if (_oxygenTank.OxygenAmount > 0)

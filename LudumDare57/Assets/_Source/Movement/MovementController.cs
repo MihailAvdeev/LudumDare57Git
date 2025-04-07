@@ -14,6 +14,7 @@ namespace MovementSystem
         private Rigidbody2D _rigidbody;
 
         private Vector2 _targetVelocity;
+        private float _targetAngle;
 
         private void Start()
         {
@@ -31,6 +32,9 @@ namespace MovementSystem
             }
             else
             {
+                float angle = Mathf.MoveTowardsAngle(body.eulerAngles.z, _targetAngle, 200.0f * Time.deltaTime);
+                body.eulerAngles = new(0f, 0f, angle);
+
                 if (_rigidbody.velocity != _targetVelocity)
                 {
                     _rigidbody.velocity = Vector2.MoveTowards(_rigidbody.velocity, _targetVelocity, _acceleration * Time.deltaTime);
@@ -41,9 +45,7 @@ namespace MovementSystem
         public void Move(Vector2 direction)
         {
             _targetVelocity = direction * _maxSpeed;
-
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            body.eulerAngles = new(0f, 0f, angle);
+            _targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             
             if (direction.x < -0.01f)
             {
