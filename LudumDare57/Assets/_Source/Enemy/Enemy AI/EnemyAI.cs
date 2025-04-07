@@ -37,10 +37,6 @@ namespace EnemySystem
             {
                 enemyMovement.MoveToPosition(_currentPercievedObject.transform.position);
             }
-            else
-            {
-                enemyMovement.MoveToPosition(route[_currentRouteIndex].position);
-            }
         }
 
         public void StartPercieving(PercievedObject percievedObject)
