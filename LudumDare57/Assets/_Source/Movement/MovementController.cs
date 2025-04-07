@@ -10,15 +10,19 @@ namespace MovementSystem
         [SerializeField] private float _deceleration;
         [SerializeField] private Transform torso;
         [SerializeField] private Transform body;
+        [SerializeField] private Animator animator;
 
         private Rigidbody2D _rigidbody;
 
         private Vector2 _targetVelocity;
         private float _targetAngle;
 
+        private int _animatorSwimmingHash;
+
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            _animatorSwimmingHash = Animator.StringToHash("IsSwimming");
         }
 
         private void Update()
@@ -54,6 +58,15 @@ namespace MovementSystem
             else if(direction.x > 0.01f)
             {
                 torso.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            }
+
+            if (direction.magnitude > 0f)
+            {
+                animator.SetBool(_animatorSwimmingHash, true);
+            }
+            else
+            {
+                animator.SetBool(_animatorSwimmingHash, false);
             }
         }
     }

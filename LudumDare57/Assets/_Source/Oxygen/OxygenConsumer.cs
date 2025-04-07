@@ -21,6 +21,8 @@ namespace OxygenSystem
             coroutineManager.StartCoroutine(ConsumingOxygen());
         }
 
+        public event Action OnSuffocationStarted;
+
         private IEnumerator ConsumingOxygen()
         {
             float timer = 0f;
@@ -41,7 +43,7 @@ namespace OxygenSystem
                     }
                     else
                     {
-                        Debug.Log("Suffocating!");
+                        OnSuffocationStarted?.Invoke();
                     }
                 }
             }
