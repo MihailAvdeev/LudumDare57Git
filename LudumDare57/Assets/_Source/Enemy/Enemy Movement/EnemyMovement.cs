@@ -7,10 +7,15 @@ namespace EnemySystem
     [RequireComponent(typeof(Seeker)), RequireComponent(typeof(Rigidbody2D))]
     public class EnemyMovement : MonoBehaviour
     {
-        [SerializeField] private float speed;
+        [SerializeField] private float movementSpeed;
+        [SerializeField] private float movementAcceleration;
+        [Space]
+        [SerializeField] private float rotationSpeed;
+        [Space]
         [SerializeField] private float nextWaypointDistance;
 
-        [SerializeField] private Transform visuals;
+        // TODO: solve the jiggling problem
+        // [SerializeField] private Transform visuals;
 
         private Path _path;
         private int _currentWaypoint = 0;
@@ -45,21 +50,21 @@ namespace EnemySystem
 
             if (!_reachedEndOfPath)
             {
-                Vector2 direction = ((Vector2)_path.vectorPath[_currentWaypoint] - _rigidbody.position).normalized;
-                Vector2 force = direction * (speed * Time.deltaTime);
+                Vector2 targetDirection = ((Vector2)_path.vectorPath[_currentWaypoint] - _rigidbody.position).normalized;
 
-                float targetRotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                float actualRotation = Mathf.MoveTowardsAngle(visuals.eulerAngles.z, targetRotation, 100.0f * Time.deltaTime);
-                visuals.eulerAngles = new Vector3(0f, 0f, actualRotation);
+                float targetRotation = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+                _rigidbody.rotation = Mathf.MoveTowardsAngle(_rigidbody.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-                _rigidbody.AddForce(force);
+                Vector2 targetVelocity = targetDirection * movementSpeed;
+                _rigidbody.velocity = Vector2.MoveTowards(_rigidbody.velocity, targetVelocity, movementSpeed * Time.deltaTime);
 
                 float distance = Vector2.Distance(_rigidbody.position, _path.vectorPath[_currentWaypoint]);
-
                 if (distance < nextWaypointDistance)
                 {
                     _currentWaypoint++;
                 }
+
+                // TODO: solve the jiggling problem
                 /*
                 if (direction.x >= 0.5f)
                 {

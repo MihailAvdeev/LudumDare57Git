@@ -3,20 +3,29 @@ using UnityEngine;
 
 namespace EnemySystem
 {
-    public class EnemyAI : MonoBehaviour, IPerciever
+    public class EnemyController : MonoBehaviour, IPerciever
     {
         public List<Transform> route = new();
-
         private int _currentRouteIndex = -1;
 
         [SerializeField] private EnemyMovement enemyMovement;
 
-        private List<PercievedObject> _percievedObjects = new();
+        // Perception
+        private readonly List<PercievedObject> _percievedObjects = new();
         private PercievedObject _currentPercievedObject;
+
+        // Weapon
+        [Space]
+        [SerializeField] private MeleeWeapon.WeaponReferences weaponReferences;
+        [SerializeField] private MeleeWeapon.WeaponParameters weaponParameters;
+
+        private MeleeWeapon _weapon;
 
         private void Start()
         {
             enemyMovement.OnEndOfPathReached += SelectNextTarget;
+
+            _weapon = new(weaponReferences, weaponParameters);
 
             SelectNextTarget();
         }
@@ -37,6 +46,8 @@ namespace EnemySystem
             {
                 enemyMovement.MoveToPosition(_currentPercievedObject.transform.position);
             }
+
+            _weapon.Use();
         }
 
         public void StartPercieving(PercievedObject percievedObject)

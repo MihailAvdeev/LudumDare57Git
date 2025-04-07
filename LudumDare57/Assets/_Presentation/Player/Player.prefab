@@ -511,13 +511,14 @@ GameObject:
   - component: {fileID: 6174691598275013967}
   - component: {fileID: 6649126286771333414}
   - component: {fileID: 5161090447554855619}
+  - component: {fileID: 7463417649023277991}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1078178585686185051
 Transform:
   m_ObjectHideFlags: 0
@@ -644,13 +645,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75696d70b8df2a24997174e75e4ccb37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Distance: 0
-  IsHidden: 0
   percievingLayers:
     serializedVersion: 2
     m_Bits: 128
   priority: 1
   hiddenEffect: 10
+  Distance: 0
+--- !u!114 &7463417649023277991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302957767299322479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d5edbddc22d0e40be338dd803b3c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5831329646232176654
 GameObject:
   m_ObjectHideFlags: 0

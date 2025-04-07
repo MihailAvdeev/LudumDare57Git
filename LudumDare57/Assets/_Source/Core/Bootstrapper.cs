@@ -1,4 +1,5 @@
 using CustomUtilities;
+using EnemySystem;
 using FlashlightSystem;
 using GameSystem;
 using InputSystem;
@@ -39,22 +40,26 @@ namespace Core
         [Header("Win")]
         [SerializeField] private Bathyscaphe bathyscaphe;
 
+        [Header("Death")]
+        [SerializeField] private Target target;
+
         private void Start()
         {
             GameWinController gameWinController = new(gameWinMenu);
             bathyscaphe.OnBathyscapheEntered += gameWinController.WinGame;
 
             GameLossController gameLossController = new(gameLossMenu);
+            target.OndamageRecieved += (int damage) => { gameLossController.LoseGame(); };
 
             InteractionData interactionData = new();
             interactionData.TryAddService(interactionAudioSource);
             InteractionController interactionController = new(interactionFinder, interactionData);
 
-            OxygenTank oxygenTank = new(100)
+            OxygenTank oxygenTank = new(30)
             {
-                OxygenAmount = 100
+                OxygenAmount = 30
             };
-            OxygenConsumer oxygenConsumer = new(0.25f, oxygenTank, coroutineManager);
+            OxygenConsumer oxygenConsumer = new(1.0f, oxygenTank, coroutineManager);
             oxygenConsumer.OnSuffocationStarted += gameLossController.LoseGame;
             OxygenTankUIController oxygenTankUIController = new(oxygenTankUIView);
             oxygenTankUIController.DisplayOxygenTank(oxygenTank);
