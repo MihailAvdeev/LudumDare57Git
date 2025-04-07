@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GameSystem
 {
-    public class GameWinController : MonoBehaviour
+    public class GameWinController
     {
         private readonly GameWinMenu _menu;
 

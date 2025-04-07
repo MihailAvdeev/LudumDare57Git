@@ -12,17 +12,17 @@ namespace EnemySystem
 
         private void OnTriggerEnter2D(Collider2D collider)
         {
-            if (collider.TryGetComponent(out PercievedObject percievedObject))
+            if (collider.TryGetComponent(out ICoverable coverable))
             {
-                percievedObject.IsHidden = true;
+                coverable.TakeCover(this);
             }
         }
 
         private void OnTriggerExit2D(Collider2D collider)
         {
-            if (collider.TryGetComponent(out PercievedObject percievedObject))
+            if (collider.TryGetComponent(out ICoverable coverable))
             {
-                percievedObject.IsHidden = false;
+                coverable.LeaveCover(this);
             }
         }
     }

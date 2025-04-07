@@ -4,18 +4,19 @@ using UnityEngine;
 
 namespace EnemySystem
 {
-    public class PercievedObject : MonoBehaviour
+    public class PercievedObject : MonoBehaviour, ICoverable
     {
-        public float Distance;
-        public bool IsHidden;
-
-        public float ActualDistance { get { return IsHidden ? Distance - hiddenEffect : Distance; } }
-
         [SerializeField] private LayerMask percievingLayers;
         [SerializeField] private int priority;
         [SerializeField] private float hiddenEffect;
 
-        private HashSet<IPerciever> _currentPercievers = new();
+        public float Distance;
+
+        private readonly HashSet<Cover> _covers = new();
+        private bool _isInCover { get { return _covers.Count > 0; } }
+        public float ActualDistance { get { return _isInCover ? Distance - hiddenEffect : Distance; } }
+
+        private readonly HashSet<IPerciever> _currentPercievers = new();
 
         private void FixedUpdate()
         {
@@ -45,6 +46,16 @@ namespace EnemySystem
             }
 
             _currentPercievers.UnionWith(percievers);
+        }
+
+        public void TakeCover(Cover cover)
+        {
+            _covers.Add(cover);
+        }
+
+        public void LeaveCover(Cover cover)
+        {
+            _covers.Remove(cover);
         }
     }
 }
