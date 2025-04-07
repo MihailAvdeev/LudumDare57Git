@@ -6,6 +6,7 @@ using InputSystem;
 using InteractionSystem;
 using MovementSystem;
 using OxygenSystem;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Core
@@ -27,6 +28,15 @@ namespace Core
         [Space]
         [SerializeField] private CoroutineManager coroutineManager;
 
+        [Header("Monsters")]
+        [SerializeField] private List<MonsterSpawnPoint> monstersSpawnPoints = new ();
+
+        private struct MonsterSpawnPoint
+        {
+            [field: SerializeField] public Transform Monster { get; private set; }
+            [field: SerializeField] public Transform SpawnPoint { get; private set; }
+        }
+
         [Header("Interaction")]
         [SerializeField] private InteractionFinder interactionFinder;
         [SerializeField] private AudioSource interactionAudioSource;
@@ -45,6 +55,8 @@ namespace Core
 
         private void Start()
         {
+            Time.timeScale = 0.0f;
+
             GameWinController gameWinController = new(gameWinMenu);
             bathyscaphe.OnBathyscapheEntered += gameWinController.WinGame;
 
