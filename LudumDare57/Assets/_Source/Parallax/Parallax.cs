@@ -16,7 +16,7 @@ namespace ParallaxSystem
             _startPosition = transform.position;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             float distanceX = cameraTransform.position.x * (1.0f - horizontalParallax);
             float distanceY = cameraTransform.position.y * (1.0f - verticalParallax);
