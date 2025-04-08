@@ -4,7 +4,7 @@ namespace MovingDecorationsSystem
 {
     public class MovingDecoration : MonoBehaviour
     {
-        [SerializeField] private Transform[] waypoints = new Transform[0];
+        [SerializeField] private WaypointsProvider waypointsProvider;
         [Space]
         [SerializeField] private float movementSpeed;
         [SerializeField] private bool moveRandomly;
@@ -12,7 +12,7 @@ namespace MovingDecorationsSystem
         [SerializeField] private float rotationSpeed;
         [SerializeField] private bool rotate;
 
-        private Transform _currentWaypoint;
+        private Vector3 _currentWaypoint;
         private int _currentWaypointIndex;
 
         private void Start()
@@ -25,7 +25,7 @@ namespace MovingDecorationsSystem
             if (_currentWaypoint == null)
                 return;
 
-            Vector3 targetPosition = _currentWaypoint.position;
+            Vector3 targetPosition = _currentWaypoint;
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed * Time.fixedDeltaTime);
 
             Vector3 targetDirection = (targetPosition - transform.position).normalized;
@@ -48,21 +48,21 @@ namespace MovingDecorationsSystem
 
         private void SelectNextWaypoint()
         {
-            if (waypoints.Length <= 0)
+            if (waypointsProvider.Waypoints.Count <= 0)
                 return;
 
             if (moveRandomly)
             {
-                _currentWaypointIndex = Random.Range(0, waypoints.Length - 1);
+                _currentWaypointIndex = Random.Range(0, waypointsProvider.Waypoints.Count - 1);
             }
             else
             {
                 _currentWaypointIndex++;
-                if (_currentWaypointIndex >= waypoints.Length)
+                if (_currentWaypointIndex >= waypointsProvider.Waypoints.Count)
                     _currentWaypointIndex = 0;
             }
 
-            _currentWaypoint = waypoints[_currentWaypointIndex];
+            _currentWaypoint = waypointsProvider.Waypoints[_currentWaypointIndex];
         }
     }
 }

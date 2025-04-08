@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5485908e2cc7ed49bd301e3f9b28f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillOxygenTankClip: {fileID: 8300000, guid: 8cb924f29a51f424c8bac6c635b586ab, type: 3}
+  fillOxygenTankClip: {fileID: 8300000, guid: 3112a5e98fe0ca741a7db10074f26d4a, type: 3}
   OnInteractionShown:
     m_PersistentCalls:
       m_Calls:

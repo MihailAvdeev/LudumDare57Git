@@ -248,7 +248,7 @@ MonoBehaviour:
   weaponReferences:
     <WeaponOrigin>k__BackingField: {fileID: 2189208099520788399}
     <AttackingSource>k__BackingField: {fileID: 2101310804954555122}
-    <AttackingClip>k__BackingField: {fileID: 0}
+    <AttackingClip>k__BackingField: {fileID: 8300000, guid: 47a2885db938a1345b48c98460c96ec4, type: 3}
     <TargetLayers>k__BackingField:
       serializedVersion: 2
       m_Bits: 64
