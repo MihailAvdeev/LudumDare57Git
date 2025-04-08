@@ -53,7 +53,7 @@ namespace Core
             GameWinController gameWinController = new(gameWinMenu);
             bathyscaphe.OnBathyscapheEntered += gameWinController.WinGame;
 
-            GameLossController gameLossController = new(gameLossMenu);
+            GameLossController gameLossController = new(gameLossMenu, player);
             target.OndamageRecieved += (int damage) => { gameLossController.LoseGame(); };
 
             InteractionData interactionData = new();

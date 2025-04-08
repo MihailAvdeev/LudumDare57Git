@@ -42,7 +42,7 @@ namespace GameSystem
             _gameLossMenu.CloseMenu();
             _gameWinMenu.CloseMenu();
 
-            _oxygenTank.OxygenAmount = _oxygenTank.MaxOxygenAmount;
+            _oxygenTank.OxygenAmount = 30;
 
             Time.timeScale = 1.0f;
         }

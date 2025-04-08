@@ -947,6 +947,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8165018504692203344, guid: 656a17ad44846f245a52306dc3d616e0, type: 3}
+      propertyPath: m_LightVolumeIntensity
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 8315864715023871511, guid: 656a17ad44846f245a52306dc3d616e0, type: 3}
       propertyPath: m_Name
       value: Oxygen Indicator
