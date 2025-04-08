@@ -11,6 +11,7 @@ namespace FlashlightSystem
     {
         [SerializeField] private Light2D radiusLight;
         [SerializeField] private Light2D coneLight;
+        [SerializeField] private Transform aimTarget;
 
         [Space]
         [SerializeField] private FlashlightMode[] flashlightModes = new FlashlightMode[1];
@@ -19,7 +20,6 @@ namespace FlashlightSystem
         [Space]
         [SerializeField] private CinemachineVirtualCamera switchedOffVirtualCamera;
         [SerializeField] private float switchedOffPerceptionDistance;
-        [SerializeField] private LookController lookController;
 
         [Space]
         [SerializeField] private PercievedObject percievedObject;
@@ -52,7 +52,7 @@ namespace FlashlightSystem
                     _currentVirtualCamera = switchedOffVirtualCamera;
                     _currentVirtualCamera.enabled = true;
 
-                    lookController.AimDistance = 0f;
+                    aimTarget.localPosition = new(aimTarget.localPosition.x, -0.719f, 0f);
 
                     percievedObject.Distance = switchedOffPerceptionDistance;
                 }
@@ -84,7 +84,7 @@ namespace FlashlightSystem
             coneLight.pointLightOuterAngle = mode.ConeLightOuterAngle;
             coneLight.falloffIntensity = mode.ConeLightFalloffStrength;
 
-            lookController.AimDistance = mode.AimDistance;
+            aimTarget.localPosition = new(aimTarget.localPosition.x, mode.AimDistance, 0f);
 
             percievedObject.Distance = mode.PerceptionDistance;
         }

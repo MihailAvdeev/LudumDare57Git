@@ -24,18 +24,11 @@ namespace Core
 
         [Header("Oxygen")]
         [SerializeField] private OxygenIndicator oxygenTankUIView;
+        [SerializeField] private int maxOxygen;
+        [SerializeField] private int startOxygen;
 
         [Space]
         [SerializeField] private CoroutineManager coroutineManager;
-
-        [Header("Monsters")]
-        [SerializeField] private List<MonsterSpawnPoint> monstersSpawnPoints = new ();
-
-        private struct MonsterSpawnPoint
-        {
-            [field: SerializeField] public Transform Monster { get; private set; }
-            [field: SerializeField] public Transform SpawnPoint { get; private set; }
-        }
 
         [Header("Interaction")]
         [SerializeField] private InteractionFinder interactionFinder;
@@ -67,9 +60,9 @@ namespace Core
             interactionData.TryAddService(interactionAudioSource);
             InteractionController interactionController = new(interactionFinder, interactionData);
 
-            OxygenTank oxygenTank = new(30)
+            OxygenTank oxygenTank = new(maxOxygen)
             {
-                OxygenAmount = 30
+                OxygenAmount = startOxygen
             };
             OxygenConsumer oxygenConsumer = new(1.0f, oxygenTank, coroutineManager);
             oxygenConsumer.OnSuffocationStarted += gameLossController.LoseGame;
