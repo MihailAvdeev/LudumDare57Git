@@ -20941,6 +20941,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3708552255760834290, guid: 3b86ba344093b554e8e6c959061f26e7, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708552255760834290, guid: 3b86ba344093b554e8e6c959061f26e7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708552255760834290, guid: 3b86ba344093b554e8e6c959061f26e7, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
+      objectReference: {fileID: 0}
     - target: {fileID: 6757255713899635246, guid: 3b86ba344093b554e8e6c959061f26e7, type: 3}
       propertyPath: m_Name
       value: Algae
@@ -20970,7 +20982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &541925785
 Transform:
   m_ObjectHideFlags: 0
@@ -21266,6 +21278,18 @@ PrefabInstance:
     - target: {fileID: 596633131650313762, guid: e6e127dbee3d9cd4ea5cc7552bf007ea, type: 3}
       propertyPath: m_Name
       value: Ruins 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602195605265593906, guid: e6e127dbee3d9cd4ea5cc7552bf007ea, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602195605265593906, guid: e6e127dbee3d9cd4ea5cc7552bf007ea, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602195605265593906, guid: e6e127dbee3d9cd4ea5cc7552bf007ea, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
       objectReference: {fileID: 0}
     - target: {fileID: 6079354754622445868, guid: e6e127dbee3d9cd4ea5cc7552bf007ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22172,6 +22196,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ruins
       objectReference: {fileID: 0}
+    - target: {fileID: 8714197433804733859, guid: 8a5dbacd48c256a4aba18338548573ba, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714197433804733859, guid: 8a5dbacd48c256a4aba18338548573ba, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714197433804733859, guid: 8a5dbacd48c256a4aba18338548573ba, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22419,6 +22455,18 @@ PrefabInstance:
     - target: {fileID: 3293977814166888271, guid: cb31218ef79f77e48affc6c973c9f0b7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3601348969828533188, guid: cb31218ef79f77e48affc6c973c9f0b7, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3601348969828533188, guid: cb31218ef79f77e48affc6c973c9f0b7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3601348969828533188, guid: cb31218ef79f77e48affc6c973c9f0b7, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
       objectReference: {fileID: 0}
     - target: {fileID: 7133314419977243207, guid: cb31218ef79f77e48affc6c973c9f0b7, type: 3}
       propertyPath: m_Name
@@ -23120,6 +23168,18 @@ PrefabInstance:
     - target: {fileID: 4012420451703652564, guid: 85a235d034d176f4c8078e6e1dd3d38b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025922479705632358, guid: 85a235d034d176f4c8078e6e1dd3d38b, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025922479705632358, guid: 85a235d034d176f4c8078e6e1dd3d38b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025922479705632358, guid: 85a235d034d176f4c8078e6e1dd3d38b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24627,7 +24687,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0, g: 0.040872376, b: 0.0754717, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.15
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 0000000029047a0cbbda9350
@@ -25100,6 +25160,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4275667111543217140, guid: d49eebb5b8b51c043bb17e18da8a2b48, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275667111543217140, guid: d49eebb5b8b51c043bb17e18da8a2b48, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275667111543217140, guid: d49eebb5b8b51c043bb17e18da8a2b48, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
+      objectReference: {fileID: 0}
     - target: {fileID: 8578210843198745257, guid: d49eebb5b8b51c043bb17e18da8a2b48, type: 3}
       propertyPath: m_Name
       value: Rock 3
@@ -25122,6 +25194,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 108849306}
     m_Modifications:
+    - target: {fileID: 518527619891777483, guid: 0f41d33463970214f88674249693c74e, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 518527619891777483, guid: 0f41d33463970214f88674249693c74e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 518527619891777483, guid: 0f41d33463970214f88674249693c74e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
+      objectReference: {fileID: 0}
     - target: {fileID: 3832164916578020583, guid: 0f41d33463970214f88674249693c74e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.49
@@ -25223,6 +25307,18 @@ PrefabInstance:
     - target: {fileID: 545713974710997601, guid: c87303ef45c8eac4595ecead1967eda5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593594136085252359, guid: c87303ef45c8eac4595ecead1967eda5, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593594136085252359, guid: c87303ef45c8eac4595ecead1967eda5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5593594136085252359, guid: c87303ef45c8eac4595ecead1967eda5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
       objectReference: {fileID: 0}
     - target: {fileID: 8861270280753463247, guid: c87303ef45c8eac4595ecead1967eda5, type: 3}
       propertyPath: m_Name
@@ -25359,6 +25455,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8499532613054405492, guid: 129c4c1de1dea474ea172cb5ba7f8dd5, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499532613054405492, guid: 129c4c1de1dea474ea172cb5ba7f8dd5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499532613054405492, guid: 129c4c1de1dea474ea172cb5ba7f8dd5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25377,6 +25485,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 108849306}
     m_Modifications:
+    - target: {fileID: 3886458694922373681, guid: 00da97a0b8ef3a94fb5c906693ed25b6, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886458694922373681, guid: 00da97a0b8ef3a94fb5c906693ed25b6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886458694922373681, guid: 00da97a0b8ef3a94fb5c906693ed25b6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
+      objectReference: {fileID: 0}
     - target: {fileID: 4219306407929120662, guid: 00da97a0b8ef3a94fb5c906693ed25b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.26
@@ -25556,6 +25676,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 2691156145342351080, guid: 08a8884571fd515439305bb236855c1c, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691156145342351080, guid: 08a8884571fd515439305bb236855c1c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691156145342351080, guid: 08a8884571fd515439305bb236855c1c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25574,6 +25706,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 108849306}
     m_Modifications:
+    - target: {fileID: 1190250319325323072, guid: 116236861c3623c499ab3acb65686ecb, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190250319325323072, guid: 116236861c3623c499ab3acb65686ecb, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190250319325323072, guid: 116236861c3623c499ab3acb65686ecb, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
+      objectReference: {fileID: 0}
     - target: {fileID: 1255838978639901831, guid: 116236861c3623c499ab3acb65686ecb, type: 3}
       propertyPath: m_Name
       value: Rock 5
@@ -25676,6 +25820,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4123302447309880251, guid: 65fcf6e2778d52044a38d0583636d4d8, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123302447309880251, guid: 65fcf6e2778d52044a38d0583636d4d8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123302447309880251, guid: 65fcf6e2778d52044a38d0583636d4d8, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
+      objectReference: {fileID: 0}
     - target: {fileID: 8398512974901004940, guid: 65fcf6e2778d52044a38d0583636d4d8, type: 3}
       propertyPath: m_Name
       value: Rock 8
@@ -25701,6 +25857,18 @@ PrefabInstance:
     - target: {fileID: 5397104700761738067, guid: de03c06cc10f4f642892fdb5a4cb14dd, type: 3}
       propertyPath: m_Name
       value: Rock 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422225496580010875, guid: de03c06cc10f4f642892fdb5a4cb14dd, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422225496580010875, guid: de03c06cc10f4f642892fdb5a4cb14dd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5422225496580010875, guid: de03c06cc10f4f642892fdb5a4cb14dd, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 209323049
       objectReference: {fileID: 0}
     - target: {fileID: 7971349591600716369, guid: de03c06cc10f4f642892fdb5a4cb14dd, type: 3}
       propertyPath: m_LocalPosition.x
