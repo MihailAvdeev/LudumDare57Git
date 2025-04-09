@@ -69,7 +69,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 270c9ba38118fcc469a3102fcbb38449, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -250,11 +250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2314915214952354777, guid: 25f61737c6407f046a9df64a20f1007a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 250
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 2314915214952354777, guid: 25f61737c6407f046a9df64a20f1007a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 55
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2314915214952354777, guid: 25f61737c6407f046a9df64a20f1007a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -352,11 +352,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2314915214952354777, guid: 25f61737c6407f046a9df64a20f1007a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 250
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 2314915214952354777, guid: 25f61737c6407f046a9df64a20f1007a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 55
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2314915214952354777, guid: 25f61737c6407f046a9df64a20f1007a, type: 3}
       propertyPath: m_LocalPosition.x

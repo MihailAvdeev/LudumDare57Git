@@ -55,7 +55,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2069209024061307440, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_Name
-      value: Enemy Body Segment (3)
+      value: Monster Body Segment (3)
       objectReference: {fileID: 0}
     - target: {fileID: 2661462816440338699, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_SortingOrder
@@ -125,7 +125,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2069209024061307440, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_Name
-      value: Enemy Body Segment (6)
+      value: Monster Body Segment (6)
       objectReference: {fileID: 0}
     - target: {fileID: 2661462816440338699, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_SortingOrder
@@ -195,7 +195,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2069209024061307440, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_Name
-      value: Enemy Body Segment
+      value: Monster Body Segment
       objectReference: {fileID: 0}
     - target: {fileID: 4090459063382687212, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -263,30 +263,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5403812016587270804}
     m_Modifications:
-    - target: {fileID: 1084786126066444441, guid: b4dd0d00cb6149544900dd76bafd75bc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.384
-      objectReference: {fileID: 0}
-    - target: {fileID: 2320040488634074513, guid: b4dd0d00cb6149544900dd76bafd75bc, type: 3}
-      propertyPath: m_Color.g
-      value: 0.53380704
-      objectReference: {fileID: 0}
-    - target: {fileID: 2320040488634074513, guid: b4dd0d00cb6149544900dd76bafd75bc, type: 3}
-      propertyPath: m_Intensity
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2320040488634074513, guid: b4dd0d00cb6149544900dd76bafd75bc, type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2320040488634074513, guid: b4dd0d00cb6149544900dd76bafd75bc, type: 3}
-      propertyPath: m_LightVolumeIntensity
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2320040488634074513, guid: b4dd0d00cb6149544900dd76bafd75bc, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 2375678283073846178, guid: b4dd0d00cb6149544900dd76bafd75bc, type: 3}
       propertyPath: m_Name
       value: Monster Head
@@ -356,7 +332,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2069209024061307440, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_Name
-      value: Enemy Body Segment (8)
+      value: Monster Body Segment (8)
       objectReference: {fileID: 0}
     - target: {fileID: 2661462816440338699, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_SortingOrder
@@ -426,7 +402,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2069209024061307440, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_Name
-      value: Enemy Body Segment (9)
+      value: Monster Body Segment (9)
       objectReference: {fileID: 0}
     - target: {fileID: 2661462816440338699, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_SortingOrder
@@ -496,7 +472,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2069209024061307440, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_Name
-      value: Enemy Body Segment (1)
+      value: Monster Body Segment (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2661462816440338699, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_SortingOrder
@@ -610,7 +586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6918977110617860029, guid: c3648119da2359b4b97f388d4bb34289, type: 3}
       propertyPath: m_Name
-      value: Enemy Tail Segment 2
+      value: Monster Tail Segment 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -632,7 +608,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2069209024061307440, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_Name
-      value: Enemy Body Segment (4)
+      value: Monster Body Segment (4)
       objectReference: {fileID: 0}
     - target: {fileID: 2661462816440338699, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_SortingOrder
@@ -702,7 +678,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2069209024061307440, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_Name
-      value: Enemy Body Segment (2)
+      value: Monster Body Segment (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2661462816440338699, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_SortingOrder
@@ -816,7 +792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6918977110617860029, guid: 2551e95d5b8ed224fb8f351e4d0dfa19, type: 3}
       propertyPath: m_Name
-      value: Enemy Tail Segment 1
+      value: Monster Tail Segment 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -882,7 +858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6918977110617860029, guid: ca6a2e7da6191624faeaf313ea9f4e1f, type: 3}
       propertyPath: m_Name
-      value: Enemy Tail Segment
+      value: Monster Tail Segment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -904,7 +880,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2069209024061307440, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_Name
-      value: Enemy Body Segment (7)
+      value: Monster Body Segment (7)
       objectReference: {fileID: 0}
     - target: {fileID: 2661462816440338699, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_SortingOrder
@@ -974,7 +950,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2069209024061307440, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_Name
-      value: Enemy Body Segment (5)
+      value: Monster Body Segment (5)
       objectReference: {fileID: 0}
     - target: {fileID: 2661462816440338699, guid: 50625ff2e3c556945b43fbfe646735ee, type: 3}
       propertyPath: m_SortingOrder

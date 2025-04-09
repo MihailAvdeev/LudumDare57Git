@@ -9,6 +9,7 @@ namespace GameSystem
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button quitButton;
         [SerializeField] private Button settingsButton;
+        [SerializeField] private GameObject settingsTab;
 
         public event Action OnResumeButtonClicked;
         public event Action OnQuitButtonClicked;
@@ -17,12 +18,16 @@ namespace GameSystem
         {
             resumeButton.onClick.AddListener(InvokeResumeButtonEvent);
             quitButton.onClick.AddListener(InvokeQuitButtonEvent);
+            settingsButton.onClick.AddListener(OpenAudioSettings);
         }
 
         protected override void OnMenuclosed()
         {
             resumeButton.onClick.RemoveListener(InvokeResumeButtonEvent);
             quitButton.onClick.RemoveListener(InvokeQuitButtonEvent);
+            settingsButton.onClick.RemoveListener(OpenAudioSettings);
+
+            settingsTab.SetActive(false);
         }
 
         private void InvokeResumeButtonEvent()
@@ -33,6 +38,11 @@ namespace GameSystem
         private void InvokeQuitButtonEvent()
         {
             OnQuitButtonClicked?.Invoke();
+        }
+
+        private void OpenAudioSettings()
+        {
+            settingsTab.SetActive(true);
         }
     }
 }
