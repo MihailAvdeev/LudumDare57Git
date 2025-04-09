@@ -6,19 +6,19 @@ namespace GameSystem
     public class GameLossController
     {
         private readonly GameLossMenu _menu;
-        private readonly GameObject _playerObject;
 
-        public GameLossController(GameLossMenu menu, GameObject playerObject)
+        public GameLossController(GameLossMenu menu)
         {
             _menu = menu != null ? menu : throw new ArgumentNullException(nameof(menu));
-            _playerObject = playerObject != null ? playerObject : throw new ArgumentNullException(nameof(playerObject));
         }
+
+        public event Action OnGameLost;
 
         public void LoseGame()
         {
-            //Time.timeScale = 0f;
-            _playerObject.SetActive(false);
+            Time.timeScale = 0f;
             _menu.OpenMenu();
+            OnGameLost?.Invoke();
         }
     }
 }

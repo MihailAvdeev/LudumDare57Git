@@ -1,6 +1,5 @@
 using Cinemachine;
 using EnemySystem;
-using MovementSystem;
 using System;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -15,7 +14,6 @@ namespace FlashlightSystem
 
         [Space]
         [SerializeField] private FlashlightMode[] flashlightModes = new FlashlightMode[1];
-        [SerializeField] private int defaultModeIndex;
 
         [Space]
         [SerializeField] private CinemachineVirtualCamera switchedOffVirtualCamera;
@@ -32,7 +30,6 @@ namespace FlashlightSystem
         private void Start()
         {
             _currentVirtualCamera = switchedOffVirtualCamera;
-            SwitchFlashlightMode(defaultModeIndex);
         }
 
         public void SwitchFlashlightMode(int index)
@@ -48,7 +45,8 @@ namespace FlashlightSystem
                     radiusLight.enabled = false;
                     coneLight.enabled = false;
 
-                    _currentVirtualCamera.enabled = false;
+                    if (_currentVirtualCamera != null)
+                        _currentVirtualCamera.enabled = false;
                     _currentVirtualCamera = switchedOffVirtualCamera;
                     _currentVirtualCamera.enabled = true;
 
@@ -114,11 +112,11 @@ namespace FlashlightSystem
             public readonly float RadiusLightOuterRadius { get { return radiusLightOuterRadius; } }
             public readonly float RadiusLightFalloffStrength { get { return radiusLightFalloffStrength; } }
 
-            public readonly float ConeLightInnerRadius {  get { return coneLightInnerRadius; } }
-            public readonly float ConeLightOuterRadius {  get { return coneLightOuterRadius; } }
-            public readonly float ConeLightInnerAngle {  get { return coneLightInnerAngle; } }
-            public readonly float ConeLightOuterAngle {  get { return coneLightOuterAngle; } }
-            public readonly float ConeLightFalloffStrength {  get { return coneLightFalloffStrength; } }
+            public readonly float ConeLightInnerRadius { get { return coneLightInnerRadius; } }
+            public readonly float ConeLightOuterRadius { get { return coneLightOuterRadius; } }
+            public readonly float ConeLightInnerAngle { get { return coneLightInnerAngle; } }
+            public readonly float ConeLightOuterAngle { get { return coneLightOuterAngle; } }
+            public readonly float ConeLightFalloffStrength { get { return coneLightFalloffStrength; } }
 
             public readonly CinemachineVirtualCamera VirtualCamera { get { return virtualCamera; } }
             public readonly float AimDistance { get { return aimDistance; } }

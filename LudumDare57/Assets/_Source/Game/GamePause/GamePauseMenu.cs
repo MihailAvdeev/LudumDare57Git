@@ -4,29 +4,30 @@ using UnityEngine.UI;
 
 namespace GameSystem
 {
-    public class GameWinMenu : AMenu
+    public class GamePauseMenu : AMenu
     {
-        [SerializeField] private Button nextButton;
+        [SerializeField] private Button resumeButton;
         [SerializeField] private Button quitButton;
+        [SerializeField] private Button settingsButton;
 
-        public event Action OnNextButtonClicked;
+        public event Action OnResumeButtonClicked;
         public event Action OnQuitButtonClicked;
 
         protected override void OnMenuOpened()
         {
-            nextButton.onClick.AddListener(InvokeNextButtonEvent);
+            resumeButton.onClick.AddListener(InvokeResumeButtonEvent);
             quitButton.onClick.AddListener(InvokeQuitButtonEvent);
         }
 
         protected override void OnMenuclosed()
         {
-            nextButton.onClick.RemoveListener(InvokeNextButtonEvent);
+            resumeButton.onClick.RemoveListener(InvokeResumeButtonEvent);
             quitButton.onClick.RemoveListener(InvokeQuitButtonEvent);
         }
 
-        private void InvokeNextButtonEvent()
+        private void InvokeResumeButtonEvent()
         {
-            OnNextButtonClicked?.Invoke();
+            OnResumeButtonClicked?.Invoke();
         }
 
         private void InvokeQuitButtonEvent()
