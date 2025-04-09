@@ -11,7 +11,7 @@ namespace GameSystem
         private readonly Transform _startPoint;
         private readonly GameStartMenu _gameStartMenu;
         private readonly OxygenTank _oxygenTank;
-        private readonly FlashlightView _flashlightView;
+        private readonly Flashlight _flashlightView;
 
         private const int _startOxygen = 30;
         private const int _startFlashlightMode = 0;
@@ -20,7 +20,7 @@ namespace GameSystem
                                    Transform startPoint,
                                    GameStartMenu gameStartMenu,
                                    OxygenTank oxygenTank,
-                                   FlashlightView flashlightView)
+                                   Flashlight flashlightView)
         {
             _player = player != null ? player : throw new ArgumentNullException(nameof(player));
             _startPoint = startPoint != null ? startPoint : throw new ArgumentNullException(nameof(startPoint));
@@ -39,7 +39,7 @@ namespace GameSystem
             _gameStartMenu.CloseMenu();
 
             _oxygenTank.OxygenAmount = _startOxygen;
-            _flashlightView.SwitchFlashlightMode(_startFlashlightMode);
+            _flashlightView.SwitchToConfiguration(_startFlashlightMode);
 
             Time.timeScale = 1.0f;
 

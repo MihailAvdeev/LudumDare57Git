@@ -22381,7 +22381,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 962043704}
+  m_Follow: {fileID: 1867447545}
   m_Lens:
     FieldOfView: 34
     OrthographicSize: 6
@@ -23443,7 +23443,7 @@ MonoBehaviour:
   startPoint: {fileID: 554962655}
   movementController: {fileID: 1450319261}
   lookController: {fileID: 1450319271}
-  flashlightView: {fileID: 1813620538}
+  flashlight: {fileID: 1297580715}
   oxygenTankUIView: {fileID: 1594791914}
   maxOxygen: 45
   startOxygen: 30
@@ -26249,11 +26249,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1817289016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &962043704 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8243023167009235418, guid: 66f6b7406ecb5414f9ffd8fbf9eb7674, type: 3}
-  m_PrefabInstance: {fileID: 4350772621375776509}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &977988299
 GameObject:
   m_ObjectHideFlags: 0
@@ -28373,6 +28368,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e4200a58ed38d242a2f819ebacc16ef, type: 3}
+--- !u!114 &1297580715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6709648292826189321, guid: 66f6b7406ecb5414f9ffd8fbf9eb7674, type: 3}
+  m_PrefabInstance: {fileID: 4350772621375776509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c2da4ef789a1044a084a2468e4f6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1307555519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32585,17 +32591,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5762954980446516080, guid: d26f1d7832e550845acd6a0a4914fd06, type: 3}
   m_PrefabInstance: {fileID: 1812222464}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1813620538 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3096109946661553044, guid: 66f6b7406ecb5414f9ffd8fbf9eb7674, type: 3}
-  m_PrefabInstance: {fileID: 4350772621375776509}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c69e1f2f5fccd7c4b96cfd2dcdd32bf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1817289015
 GameObject:
   m_ObjectHideFlags: 0
@@ -33004,6 +32999,11 @@ Transform:
   - {fileID: 215403669}
   m_Father: {fileID: 1606208760}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1867447545 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1186347016640139271, guid: 66f6b7406ecb5414f9ffd8fbf9eb7674, type: 3}
+  m_PrefabInstance: {fileID: 4350772621375776509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1877847367
 GameObject:
   m_ObjectHideFlags: 0
@@ -33968,7 +33968,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0, g: 0.3411765, b: 1, a: 1}
-  m_Intensity: 0.05
+  m_Intensity: 0.025
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000bbda935029047a0cedff151e5ff4b537479f37cb
@@ -34392,7 +34392,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 962043704}
+  m_Follow: {fileID: 1867447545}
   m_Lens:
     FieldOfView: 34
     OrthographicSize: 8
@@ -35357,6 +35357,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6709648292826189321, guid: 66f6b7406ecb5414f9ffd8fbf9eb7674, type: 3}
+      propertyPath: switchedOffVirtualCamera
+      value: 
+      objectReference: {fileID: 739618148}
+    - target: {fileID: 6709648292826189321, guid: 66f6b7406ecb5414f9ffd8fbf9eb7674, type: 3}
+      propertyPath: flashlightConfigurations.Array.data[0].<AimConfiguration>k__BackingField.<VirtualCamera>k__BackingField
+      value: 
+      objectReference: {fileID: 423261335}
+    - target: {fileID: 6709648292826189321, guid: 66f6b7406ecb5414f9ffd8fbf9eb7674, type: 3}
+      propertyPath: flashlightConfigurations.Array.data[1].<AimConfiguration>k__BackingField.<VirtualCamera>k__BackingField
+      value: 
+      objectReference: {fileID: 2102772154}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

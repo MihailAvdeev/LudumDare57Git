@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using PerceptionSystem;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace EnemySystem
@@ -11,8 +12,8 @@ namespace EnemySystem
         [SerializeField] private EnemyMovement enemyMovement;
 
         // Perception
-        private readonly List<PercievedObject> _percievedObjects = new();
-        private PercievedObject _currentPercievedObject;
+        private readonly List<APercievedObject> _percievedObjects = new();
+        private APercievedObject _currentPercievedObject;
 
         // Weapon
         [Space]
@@ -50,12 +51,12 @@ namespace EnemySystem
             _weapon.Use();
         }
 
-        public void StartPercieving(PercievedObject percievedObject)
+        public void StartPercieving(APercievedObject percievedObject)
         {
             _percievedObjects.Add(percievedObject);
         }
 
-        public void StopPercieving(PercievedObject percievedObject)
+        public void StopPercieving(APercievedObject percievedObject)
         {
             _percievedObjects.Remove(percievedObject);
         }

@@ -1,4 +1,4 @@
-namespace EnemySystem
+namespace CoverSystem
 {
     public interface ICoverable
     {

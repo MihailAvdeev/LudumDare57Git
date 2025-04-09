@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace EnemySystem
+namespace CoverSystem
 {
     [RequireComponent(typeof(Collider2D))]
     public class Cover : MonoBehaviour
@@ -13,17 +13,13 @@ namespace EnemySystem
         private void OnTriggerEnter2D(Collider2D collider)
         {
             if (collider.TryGetComponent(out ICoverable coverable))
-            {
                 coverable.TakeCover(this);
-            }
         }
 
         private void OnTriggerExit2D(Collider2D collider)
         {
             if (collider.TryGetComponent(out ICoverable coverable))
-            {
                 coverable.LeaveCover(this);
-            }
         }
     }
 }

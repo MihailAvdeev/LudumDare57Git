@@ -20,7 +20,7 @@ namespace Core
         [SerializeField] private LookController lookController;
 
         [Space]
-        [SerializeField] private FlashlightView flashlightView;
+        [SerializeField] private Flashlight flashlight;
 
         [Header("Oxygen")]
         [SerializeField] private OxygenIndicator oxygenTankUIView;
@@ -115,7 +115,7 @@ namespace Core
             oxygenTankUIController.DisplayOxygenTank(oxygenTank);
             interactionData.TryAddService(oxygenTank);
 
-            _gameStartController = new(player, startPoint, gameStartMenu, oxygenTank, flashlightView);
+            _gameStartController = new(player, startPoint, gameStartMenu, oxygenTank, flashlight);
             _gameStartController.OnGameStarted += _playerControls.Movement.Enable;
             _gameStartController.OnGameStarted += _playerControls.Flashlight.Enable;
             _gameStartController.OnGameStarted += _playerControls.Interaction.Enable;
@@ -123,18 +123,12 @@ namespace Core
             gameStartMenu.OnStartButtonClicked += _gameStartController.StartGame;
             gameStartMenu.OpenMenu();
 
-            FlashlightController flashlightController = new(flashlightView);
-
-            _inputListener = new(movementController, lookController, interactionController, flashlightController, _gamePauseController);
+            _inputListener = new(movementController, lookController, interactionController, flashlight, _gamePauseController);
             _inputListener.SetupInputActions(_playerControls);
         }
 
-
-
         private void OnDisable()
         {
-            Debug.Log("disable");
-
             _gamePauseController.OnGamePaused -= _playerControls.Movement.Disable;
             _gamePauseController.OnGamePaused -= _playerControls.Flashlight.Disable;
             _gamePauseController.OnGamePaused -= _playerControls.Interaction.Disable;

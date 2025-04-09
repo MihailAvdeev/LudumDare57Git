@@ -13,7 +13,7 @@ namespace InputSystem
         private readonly MovementController _movementController;
         private readonly LookController _lookController;
         private readonly InteractionController _interactionController;
-        private readonly FlashlightController _flashlightController;
+        private readonly Flashlight _flashlightController;
         private readonly GamePauseController _gamePauseController;
 
         private PlayerControls _playerControls;
@@ -21,7 +21,7 @@ namespace InputSystem
         public InputListener(MovementController movementController,
                              LookController lookController,
                              InteractionController interactionController,
-                             FlashlightController flashlightController,
+                             Flashlight flashlightController,
                              GamePauseController gamePauseController)
         {
             _movementController = movementController != null ? movementController : throw new ArgumentNullException(nameof(movementController));
@@ -90,11 +90,11 @@ namespace InputSystem
 
             if (input > 0f)
             {
-                _flashlightController.SwitchFlashlightToNextMode();
+                _flashlightController.SwitchToNextConfiguration();
             }
             else if (input < 0f)
             {
-                _flashlightController.SwitchFlashlightToPreviousMode();
+                _flashlightController.SwitchToPreviousConfiguration();
             }
         }
 
