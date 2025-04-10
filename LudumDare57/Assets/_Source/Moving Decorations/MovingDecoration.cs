@@ -53,7 +53,7 @@ namespace MovingDecorationsSystem
 
             if (moveRandomly)
             {
-                _currentWaypointIndex = Random.Range(0, waypointsProvider.Waypoints.Count - 1);
+                _currentWaypointIndex = Random.Range(0, waypointsProvider.Waypoints.Count);
             }
             else
             {

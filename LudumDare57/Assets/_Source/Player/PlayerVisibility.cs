@@ -8,13 +8,24 @@ public class PlayerVisibility : APercievedObject, ICoverable
 {
     [Space]
     [SerializeField] private Flashlight flashlight;
-    [SerializeField] private float[] flashlightConfigurationvisibilities = new float[0];
+    [SerializeField] private float[] flashlightConfigurationVisibilities = new float[0];
+    [SerializeField] private float flashlightSwitchedOffVisibility;
 
     private readonly HashSet<Cover> _covers = new();
     private bool IsInCover { get { return _covers.Count > 0; } }
     private bool IsHidden { get { return IsInCover && flashlight.CurrentConfigurationIndex == -1; } }
+    private float FlashlightVisibility
+    {
+        get
+        {
+            if (flashlight.CurrentConfigurationIndex >= 0 && flashlight.CurrentConfigurationIndex < flashlightConfigurationVisibilities.Length)
+                return flashlightConfigurationVisibilities[flashlight.CurrentConfigurationIndex];
 
-    protected override float VisibilityDistance { get { return IsHidden ? 0 : TryGetFlashlightConfigurationVisibility(flashlight.CurrentConfigurationIndex); } }
+            return flashlightSwitchedOffVisibility;
+        }
+    }
+
+    protected override float VisibilityDistance { get { return IsHidden ? 0 : FlashlightVisibility; } }
 
     public void TakeCover(Cover cover)
     {
@@ -24,13 +35,5 @@ public class PlayerVisibility : APercievedObject, ICoverable
     public void LeaveCover(Cover cover)
     {
         _covers.Remove(cover);
-    }
-
-    private float TryGetFlashlightConfigurationVisibility(int index)
-    {
-        if (index >= 0 && index < flashlightConfigurationvisibilities.Length)
-            return flashlightConfigurationvisibilities[index];
-
-        return 0;
     }
 }

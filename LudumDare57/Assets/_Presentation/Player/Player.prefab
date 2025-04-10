@@ -485,9 +485,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   flashlight: {fileID: 6709648292826189321}
-  flashlightConfigurationvisibilities:
-  - 8
+  flashlightConfigurationVisibilities:
+  - 6
   - 12
+  flashlightSwitchedOffVisibility: 4
 --- !u!114 &7463417649023277991
 MonoBehaviour:
   m_ObjectHideFlags: 0
