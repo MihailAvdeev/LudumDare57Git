@@ -25,7 +25,7 @@ public class PlayerPercievedObject : APercievedObject, ICoverable
         }
     }
 
-    protected override float VisibilityDistance { get { return IsHidden ? 0 : FlashlightVisibility; } }
+    public override float VisibilityDistance { get { return IsHidden ? 0 : FlashlightVisibility; } }
 
     public void TakeCover(Cover cover)
     {

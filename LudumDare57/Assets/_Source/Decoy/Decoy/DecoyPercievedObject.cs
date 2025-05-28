@@ -9,6 +9,6 @@ namespace DecoySystem
 
         public bool IsPercievable { get; set; } = false;
 
-        protected override float VisibilityDistance { get { return IsPercievable ? engagedVisibilityDistance : 0.0f; } }
+        public override float VisibilityDistance { get { return IsPercievable ? engagedVisibilityDistance : 0.0f; } }
     }
 }

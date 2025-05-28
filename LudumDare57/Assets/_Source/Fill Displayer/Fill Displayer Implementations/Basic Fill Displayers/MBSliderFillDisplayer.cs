@@ -2,7 +2,7 @@ using FillDisplayerSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace FillDisplayerImplementations
+namespace FillDisplayerSystem
 {
     public class MBSliderFillDisplayer : AMBFillDisplayer
     {

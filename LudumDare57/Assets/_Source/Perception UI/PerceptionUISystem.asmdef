@@ -1,0 +1,17 @@
+{
+    "name": "PerceptionUISystem",
+    "rootNamespace": "PerceptionUISystem",
+    "references": [
+        "GUID:6297e1521b362d3459127441b70fdba1",
+        "GUID:84351d71210c956409c9ed6fe812f7f3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

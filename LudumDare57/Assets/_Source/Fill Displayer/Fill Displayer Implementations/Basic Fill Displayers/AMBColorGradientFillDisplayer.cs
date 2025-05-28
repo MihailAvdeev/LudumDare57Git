@@ -1,7 +1,7 @@
 using FillDisplayerSystem;
 using UnityEngine;
 
-namespace FillDisplayerImplementations
+namespace FillDisplayerSystem
 {
     public abstract class AMBColorGradientFillDisplayer : AMBFillDisplayer
     {

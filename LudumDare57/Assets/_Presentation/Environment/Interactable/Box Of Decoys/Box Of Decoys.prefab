@@ -278,9 +278,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3369696242132308617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1802da7a5cb7a549b3ba84166f94591, type: 3}
+  m_Script: {fileID: 11500000, guid: 27fba6b4d98b61d4ca20aa4273a96709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roundMode: 0
   gameObjects:
   - {fileID: 4983749391762853119}
   - {fileID: 4329081503057183863}
@@ -502,9 +503,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7955011489227635085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1802da7a5cb7a549b3ba84166f94591, type: 3}
+  m_Script: {fileID: 11500000, guid: 27fba6b4d98b61d4ca20aa4273a96709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roundMode: 0
   gameObjects:
   - {fileID: 1354855005165422563}
   - {fileID: 3516054933753604019}

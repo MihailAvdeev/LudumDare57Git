@@ -594,8 +594,8 @@ MonoBehaviour:
   gizmosColor: {r: 1, g: 0, b: 0, a: 1}
   flashlight: {fileID: 6277118290469434777}
   flashlightConfigurationVisibilities:
-  - 6
-  - 12
+  - 8
+  - 16
   flashlightSwitchedOffVisibility: 4
 --- !u!1 &5820520681330317263
 GameObject:

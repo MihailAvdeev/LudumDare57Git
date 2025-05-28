@@ -9,7 +9,7 @@ namespace PerceptionSystem
     {
         [SerializeField] private LayerMask percievingLayers;
 
-        protected abstract float VisibilityDistance { get; }
+        public abstract float VisibilityDistance { get; }
 
         private readonly HashSet<IPerciever> _currentPercievers = new();
 
