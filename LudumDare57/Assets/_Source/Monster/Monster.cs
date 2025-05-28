@@ -5,6 +5,7 @@ using UnityEngine;
 using MonsterPerseptionSystem;
 using WeaponSystem;
 using FillDisplayerSystem;
+using EffectsPlayerSystem;
 
 namespace MonsterSystem
 {
@@ -33,9 +34,11 @@ namespace MonsterSystem
         {
             Weapon weapon = new(weaponReferences, weaponParameters);
 
+            SoundEffectPlayer alertEffectPlayer = new(effectsSource, alertSound);
+
             _perception = new();
 
-            _brain = new(movement, _perception, objectives, weapon, awarenessDisplayer);
+            _brain = new(movement, _perception, objectives, weapon, awarenessDisplayer, alertEffectPlayer);
         }
 
         private void FixedUpdate()

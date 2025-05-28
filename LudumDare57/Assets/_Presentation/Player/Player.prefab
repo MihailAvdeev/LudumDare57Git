@@ -561,21 +561,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b32f3e120f19564490e932389827b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnDamageRecieved:
+  effectsAudioSource: {fileID: 3815391576751442284}
+  deathAudioClip: {fileID: 8300000, guid: 10a47f33cfb44444aaea0ce5bf7ba335, type: 3}
+  OnDeath:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5302957767299322479}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &5821707420553290615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,7 +632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   configuration:
-    maxOxygenAmount: 30
+    maxOxygenAmount: 60
 --- !u!1 &5831329646232176654
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,6 +865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 228607903812577965}
   - component: {fileID: 3844925566050083874}
+  - component: {fileID: 1493167241180869961}
   m_Layer: 6
   m_Name: Oxygen Consumer
   m_TagString: Untagged
@@ -911,6 +902,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inhalesInterval: 1
   oxygenTank: {fileID: 9205506499656098346}
+--- !u!114 &1493167241180869961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8605046164311988146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6874183a70e1af149864033917644080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oxygenConsumer: {fileID: 3844925566050083874}
+  effectsAudioSource: {fileID: 3815391576751442284}
+  deathAudioClip: {fileID: 8300000, guid: 10a47f33cfb44444aaea0ce5bf7ba335, type: 3}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &4568172037041791347
 PrefabInstance:
   m_ObjectHideFlags: 0

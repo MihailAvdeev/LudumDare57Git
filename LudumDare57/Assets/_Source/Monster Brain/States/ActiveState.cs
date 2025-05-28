@@ -5,6 +5,7 @@ using WeaponSystem;
 using StateMachineSystem;
 using System;
 using UnityEngine;
+using EffectsPlayerSystem;
 
 namespace MonsterBrainSystem
 {
@@ -15,14 +16,14 @@ namespace MonsterBrainSystem
 
         private readonly StateMachine _stateMachine;
 
-        public ActiveState(MonsterMovement movement, MonsterPerception perception, MonsterObjectives objectives, Weapon weapon, IFillDisplayer awarenessDisplayer)
+        public ActiveState(MonsterMovement movement, MonsterPerception perception, MonsterObjectives objectives, Weapon weapon, IFillDisplayer awarenessDisplayer, IEffectPlayer alertEffectPlayer)
         {
             _perception = perception ?? throw new ArgumentNullException(nameof(perception));
             _awarenessDisplayer = awarenessDisplayer ?? throw new ArgumentNullException(nameof(awarenessDisplayer));
 
             StillState still = new(movement);
             PatrolState patrol = new(movement, objectives);
-            ChaseState chase = new(movement, perception, weapon);
+            ChaseState chase = new(movement, perception, weapon, alertEffectPlayer);
             
             _stateMachine = new(still);
 

@@ -12,7 +12,7 @@ namespace PerceptionUISystem
 
         private void Update()
         {
-            valueDisplayer.DisplayValue(percievedObject.VisibilityDistance);
+            valueDisplayer.DisplayValue(percievedObject.Visibility);
         }
     }
 }

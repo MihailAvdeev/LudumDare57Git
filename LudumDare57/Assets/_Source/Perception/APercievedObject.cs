@@ -9,13 +9,13 @@ namespace PerceptionSystem
     {
         [SerializeField] private LayerMask percievingLayers;
 
-        public abstract float VisibilityDistance { get; }
+        public abstract float Visibility { get; }
 
         private readonly HashSet<IPerciever> _currentPercievers = new();
 
         private void FixedUpdate()
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, VisibilityDistance, percievingLayers);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, Visibility, percievingLayers);
             HashSet<IPerciever> percievers = new();
 
             foreach (Collider2D collider in colliders)
@@ -57,7 +57,7 @@ namespace PerceptionSystem
         private void OnDrawGizmos()
         {
             Handles.color = gizmosColor;
-            Handles.DrawWireDisc(transform.position, transform.forward, VisibilityDistance);
+            Handles.DrawWireDisc(transform.position, transform.forward, Visibility);
         }
 #endif
     }

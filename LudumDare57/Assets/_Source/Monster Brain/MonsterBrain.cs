@@ -4,6 +4,7 @@ using MonsterPerseptionSystem;
 using WeaponSystem;
 using StateMachineSystem;
 using System;
+using EffectsPlayerSystem;
 
 namespace MonsterBrainSystem
 {
@@ -11,7 +12,7 @@ namespace MonsterBrainSystem
     {
         private readonly StateMachine _stateMachine;
 
-        public MonsterBrain(MonsterMovement movement, MonsterPerception perception, MonsterObjectives objectives, Weapon weapon, IFillDisplayer awarenessDisplayer)
+        public MonsterBrain(MonsterMovement movement, MonsterPerception perception, MonsterObjectives objectives, Weapon weapon, IFillDisplayer awarenessDisplayer, IEffectPlayer alertEffectPlayer)
         {
             if (movement == null) throw new ArgumentNullException(nameof(movement));
             if (perception is null) throw new ArgumentNullException(nameof(perception));
@@ -19,7 +20,7 @@ namespace MonsterBrainSystem
 
 
             InactiveState inactiveState = new();
-            ActiveState activeState = new(movement, perception, objectives, weapon, awarenessDisplayer);
+            ActiveState activeState = new(movement, perception, objectives, weapon, awarenessDisplayer, alertEffectPlayer);
 
             _stateMachine = new(inactiveState);
 
