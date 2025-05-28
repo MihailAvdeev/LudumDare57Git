@@ -253,6 +253,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Decoy"",
+            ""id"": ""2f05eee5-749a-4be0-b3c1-b996d3fedda1"",
+            ""actions"": [
+                {
+                    ""name"": ""Use Decoy"",
+                    ""type"": ""Button"",
+                    ""id"": ""d6276a43-327e-4670-bee9-c8df7e107b5a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f16d0191-112c-4751-8580-602537fde2a6"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Use Decoy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -270,6 +298,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Pause
         m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
         m_Pause_TogglePause = m_Pause.FindAction("Toggle Pause", throwIfNotFound: true);
+        // Decoy
+        m_Decoy = asset.FindActionMap("Decoy", throwIfNotFound: true);
+        m_Decoy_UseDecoy = m_Decoy.FindAction("Use Decoy", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -519,6 +550,52 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public PauseActions @Pause => new PauseActions(this);
+
+    // Decoy
+    private readonly InputActionMap m_Decoy;
+    private List<IDecoyActions> m_DecoyActionsCallbackInterfaces = new List<IDecoyActions>();
+    private readonly InputAction m_Decoy_UseDecoy;
+    public struct DecoyActions
+    {
+        private @PlayerControls m_Wrapper;
+        public DecoyActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @UseDecoy => m_Wrapper.m_Decoy_UseDecoy;
+        public InputActionMap Get() { return m_Wrapper.m_Decoy; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DecoyActions set) { return set.Get(); }
+        public void AddCallbacks(IDecoyActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DecoyActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DecoyActionsCallbackInterfaces.Add(instance);
+            @UseDecoy.started += instance.OnUseDecoy;
+            @UseDecoy.performed += instance.OnUseDecoy;
+            @UseDecoy.canceled += instance.OnUseDecoy;
+        }
+
+        private void UnregisterCallbacks(IDecoyActions instance)
+        {
+            @UseDecoy.started -= instance.OnUseDecoy;
+            @UseDecoy.performed -= instance.OnUseDecoy;
+            @UseDecoy.canceled -= instance.OnUseDecoy;
+        }
+
+        public void RemoveCallbacks(IDecoyActions instance)
+        {
+            if (m_Wrapper.m_DecoyActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IDecoyActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DecoyActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DecoyActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public DecoyActions @Decoy => new DecoyActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -535,5 +612,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IPauseActions
     {
         void OnTogglePause(InputAction.CallbackContext context);
+    }
+    public interface IDecoyActions
+    {
+        void OnUseDecoy(InputAction.CallbackContext context);
     }
 }

@@ -1,0 +1,21 @@
+{
+    "name": "MonsterBrainSystem",
+    "rootNamespace": "MonsterBrainSystem",
+    "references": [
+        "GUID:7dade76949270e341985fa8c8ef02a2c",
+        "GUID:f61fe22f5570c7a42b1dcb50cfc88b73",
+        "GUID:08b44621cd8474b4daab451ec91db2bf",
+        "GUID:6297e1521b362d3459127441b70fdba1",
+        "GUID:b565c16b5a6d3bb4280e9d4e58f7df18",
+        "GUID:239186257e2be4a418bd90cb9295ec7f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

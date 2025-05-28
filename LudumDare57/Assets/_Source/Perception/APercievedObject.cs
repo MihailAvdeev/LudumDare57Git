@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 namespace PerceptionSystem
@@ -18,6 +19,7 @@ namespace PerceptionSystem
             HashSet<IPerciever> percievers = new();
 
             foreach (Collider2D collider in colliders)
+            {
                 if (collider.TryGetComponent(out IPerciever perciever))
                 {
                     percievers.Add(perciever);
@@ -25,15 +27,38 @@ namespace PerceptionSystem
                     if (!_currentPercievers.Contains(perciever))
                         perciever.StartPercieving(this);
                 }
+            }
 
             foreach (IPerciever perciever in _currentPercievers.ToArray())
+            {
                 if (!percievers.Contains(perciever))
                 {
                     perciever.StopPercieving(this);
                     _currentPercievers.Remove(perciever);
                 }
+            }
 
             _currentPercievers.UnionWith(percievers);
         }
+
+        private void OnDisable()
+        {
+            foreach (IPerciever perciever in _currentPercievers.ToArray())
+            {
+                perciever.StopPercieving(this);
+                _currentPercievers.Remove(perciever);
+            }
+        }
+
+#if UNITY_EDITOR
+        [Space]
+        [SerializeField] private Color gizmosColor;
+
+        private void OnDrawGizmos()
+        {
+            Handles.color = gizmosColor;
+            Handles.DrawWireDisc(transform.position, transform.forward, VisibilityDistance);
+        }
+#endif
     }
 }

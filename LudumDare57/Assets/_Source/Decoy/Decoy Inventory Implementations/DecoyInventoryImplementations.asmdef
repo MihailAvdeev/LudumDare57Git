@@ -1,0 +1,16 @@
+{
+    "name": "DecoyInventoryImplementations",
+    "rootNamespace": "DecoyInventoryImplementations",
+    "references": [
+        "GUID:71299a2bd26b24047acec23f968e72f3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

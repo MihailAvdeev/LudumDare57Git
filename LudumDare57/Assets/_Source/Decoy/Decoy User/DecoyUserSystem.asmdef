@@ -1,0 +1,18 @@
+{
+    "name": "DecoyUserSystem",
+    "rootNamespace": "DecoyUserSystem",
+    "references": [
+        "GUID:548d11563f379534096b17f5adfde1e3",
+        "GUID:71299a2bd26b24047acec23f968e72f3",
+        "GUID:6297e1521b362d3459127441b70fdba1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

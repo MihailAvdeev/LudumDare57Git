@@ -231,6 +231,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Decoy",
+            "id": "2f05eee5-749a-4be0-b3c1-b996d3fedda1",
+            "actions": [
+                {
+                    "name": "Use Decoy",
+                    "type": "Button",
+                    "id": "d6276a43-327e-4670-bee9-c8df7e107b5a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f16d0191-112c-4751-8580-602537fde2a6",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use Decoy",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

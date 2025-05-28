@@ -1,0 +1,21 @@
+{
+    "name": "DecoyUserImplementations",
+    "rootNamespace": "DecoyUserImplementations",
+    "references": [
+        "GUID:548d11563f379534096b17f5adfde1e3",
+        "GUID:5edd76cc46586294aaf1453b6a1bb295",
+        "GUID:71299a2bd26b24047acec23f968e72f3",
+        "GUID:3a2994ed6e1597d44873a32825329d6f",
+        "GUID:0a5017e50fe59de4ebd743decceff4ca",
+        "GUID:0174d080fd9c04e4d9054e8c1b3e8e79"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

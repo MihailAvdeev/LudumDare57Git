@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6443542364798656374}
-  - component: {fileID: 7095453996424998778}
+  - component: {fileID: 7528230291768743146}
   m_Layer: 6
   m_Name: Flashlight
   m_TagString: Untagged
@@ -189,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8743953894339736022}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -198,7 +198,7 @@ Transform:
   - {fileID: 6779816798358062629}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7095453996424998778
+--- !u!114 &7528230291768743146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -207,41 +207,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 8743953894339736022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c2da4ef789a1044a084a2468e4f6a1, type: 3}
+  m_Script: {fileID: 11500000, guid: f3b0704c595d77d499b89c950944bd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   radiusLight: {fileID: 3665347198199589719}
   coneLight: {fileID: 8723231471138813870}
   aimTarget: {fileID: 0}
-  percievedObject: {fileID: 0}
   flashlightConfigurations:
   - <LightConfiguration>k__BackingField:
-      <RadiusLightInnerRadius>k__BackingField: 0.5
-      <RadiusLightOuterRadius>k__BackingField: 5
+      <RadiusLightInnerRadius>k__BackingField: 0
+      <RadiusLightOuterRadius>k__BackingField: 4
       <RadiusLightFalloffStrength>k__BackingField: 1
       <ConeLightInnerRadius>k__BackingField: 0
-      <ConeLightOuterRadius>k__BackingField: 12
-      <ConeLightInnerAngle>k__BackingField: 20
-      <ConeLightOuterAngle>k__BackingField: 90
+      <ConeLightOuterRadius>k__BackingField: 8
+      <ConeLightInnerAngle>k__BackingField: 30
+      <ConeLightOuterAngle>k__BackingField: 60
       <ConeLightFalloffStrength>k__BackingField: 0.5
     <AimConfiguration>k__BackingField:
       <VirtualCamera>k__BackingField: {fileID: 0}
       <AimDistance>k__BackingField: 2
-    <VisibilityConfiguration>k__BackingField:
-      <VisibilityDistance>k__BackingField: 8
   - <LightConfiguration>k__BackingField:
-      <RadiusLightInnerRadius>k__BackingField: 1
-      <RadiusLightOuterRadius>k__BackingField: 10
+      <RadiusLightInnerRadius>k__BackingField: 0
+      <RadiusLightOuterRadius>k__BackingField: 8
       <RadiusLightFalloffStrength>k__BackingField: 1
       <ConeLightInnerRadius>k__BackingField: 0
       <ConeLightOuterRadius>k__BackingField: 16
-      <ConeLightInnerAngle>k__BackingField: 10
+      <ConeLightInnerAngle>k__BackingField: 15
       <ConeLightOuterAngle>k__BackingField: 30
       <ConeLightFalloffStrength>k__BackingField: 0.5
     <AimConfiguration>k__BackingField:
       <VirtualCamera>k__BackingField: {fileID: 0}
       <AimDistance>k__BackingField: 4
-    <VisibilityConfiguration>k__BackingField:
-      <VisibilityDistance>k__BackingField: 12
   switchedOffVirtualCamera: {fileID: 0}
-  switchedOffVisibilityDistance: 4
+  switchedOffAimDistance: 0

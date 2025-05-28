@@ -18,8 +18,8 @@ namespace ParallaxSystem
 
         private void FixedUpdate()
         {
-            float distanceX = cameraTransform.position.x * (1.0f - horizontalParallax);
-            float distanceY = cameraTransform.position.y * (1.0f - verticalParallax);
+            float distanceX = (cameraTransform.position.x - _startPosition.x) * horizontalParallax;
+            float distanceY = (cameraTransform.position.y - _startPosition.y) * verticalParallax;
             transform.position = new Vector3(_startPosition.x + distanceX, _startPosition.y + distanceY, transform.position.z);
         }
     }
