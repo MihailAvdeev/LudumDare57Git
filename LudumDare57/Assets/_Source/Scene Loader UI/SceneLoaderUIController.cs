@@ -18,7 +18,7 @@ namespace SceneLoaderUISystem
         {
             _sceneLoader = sceneLoader ?? throw new ArgumentNullException(nameof(sceneLoader));
 
-            _sceneLoader.OnLoadingStarted += _loadingScreen.Show;
+            _sceneLoader.OnLoadingStarted += _loadingScreen.Open;
             _sceneLoader.OnLoadingProgressChanged += _loadingScreen.DisplayLoadingProgress;
         }
 
@@ -27,7 +27,7 @@ namespace SceneLoaderUISystem
             if (_sceneLoader == null)
                 return;
 
-            _sceneLoader.OnLoadingStarted -= _loadingScreen.Show;
+            _sceneLoader.OnLoadingStarted -= _loadingScreen.Open;
             _sceneLoader.OnLoadingProgressChanged -= _loadingScreen.DisplayLoadingProgress;
 
             _sceneLoader = null;

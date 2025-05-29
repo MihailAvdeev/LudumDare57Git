@@ -1,0 +1,37 @@
+using ClosableUISystem;
+using InputActionsManagerSystem;
+using System;
+using UnityEngine;
+
+namespace GameSystem.GameLoss
+{
+    public class GameLossController : IGameLossController
+    {
+        private readonly IClosableUI _gameLossMenu;
+
+        private readonly IInputActionsManager _inputActionsManager;
+
+        public GameLossController(IClosableUI gameLossMenu, IInputActionsManager inputActionsManager)
+        {
+            _gameLossMenu = gameLossMenu ?? throw new ArgumentNullException(nameof(gameLossMenu));
+            _inputActionsManager = inputActionsManager ?? throw new ArgumentNullException(nameof(inputActionsManager));
+        }
+
+        public event Action OnGameLost;
+
+        public void LoseGame()
+        {
+            Time.timeScale = 0f;
+            
+            _inputActionsManager.DisableMovementInput();
+            _inputActionsManager.DisableFlashlightInput();
+            _inputActionsManager.DisableInteractionInput();
+            _inputActionsManager.DisablePauseInput();
+            _inputActionsManager.DisableDecoyInput();
+
+            _gameLossMenu.Open();
+
+            OnGameLost?.Invoke();
+        }
+    }
+}

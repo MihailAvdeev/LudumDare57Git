@@ -1,10 +1,10 @@
 using FillDisplayerSystem;
-using HidableUISystem;
+using ClosableUISystem;
 using UnityEngine;
 
 namespace SceneLoaderUISystem
 {
-    public class LoadingScreen : AHidableUI
+    public class LoadingScreen : AMBClosableUI
     {
         [SerializeField] private AMBFillDisplayer[] fillDisplayers = new AMBFillDisplayer[0];
 
@@ -16,12 +16,12 @@ namespace SceneLoaderUISystem
             }
         }
 
-        public override void Hide()
+        public override void Close()
         {
             gameObject.SetActive(false);
         }
 
-        public override void Show()
+        public override void Open()
         {
             gameObject.SetActive(true);
         }

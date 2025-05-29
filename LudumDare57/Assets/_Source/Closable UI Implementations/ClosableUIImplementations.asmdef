@@ -1,0 +1,17 @@
+{
+    "name": "ClosableUIImplementations",
+    "rootNamespace": "ClosableUISystem",
+    "references": [
+        "GUID:9babfd34f78b00e4a80bc21e0235e5f3",
+        "GUID:4307f53044263cf4b835bd812fc161a4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
