@@ -2801,6 +2801,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadScene
       objectReference: {fileID: 0}
+    - target: {fileID: 63103926785802008, guid: 122aa68025c782a47867dc54b1d8228d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level 3
+      objectReference: {fileID: 0}
     - target: {fileID: 167000037433829810, guid: 122aa68025c782a47867dc54b1d8228d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
