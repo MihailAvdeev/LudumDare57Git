@@ -1,0 +1,17 @@
+{
+    "name": "SceneTransitionSystem",
+    "rootNamespace": "SceneTransitionSystem",
+    "references": [
+        "GUID:ff14f676cc843d047b9703971c94e029",
+        "GUID:95f0371bc48a41046881ca14489061ca"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

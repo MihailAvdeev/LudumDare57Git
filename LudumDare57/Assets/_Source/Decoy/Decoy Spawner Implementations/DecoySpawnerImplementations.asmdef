@@ -1,0 +1,17 @@
+{
+    "name": "DecoySpawnerImplementations",
+    "rootNamespace": "DecoySpawnerImplementations",
+    "references": [
+        "GUID:0a5017e50fe59de4ebd743decceff4ca",
+        "GUID:548d11563f379534096b17f5adfde1e3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

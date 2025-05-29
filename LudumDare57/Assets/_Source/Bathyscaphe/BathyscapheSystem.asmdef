@@ -1,0 +1,16 @@
+{
+    "name": "BathyscapheSystem",
+    "rootNamespace": "BathyscapheSystem",
+    "references": [
+        "GUID:f9a1cc6b2a298e741b12c65f62e260c6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

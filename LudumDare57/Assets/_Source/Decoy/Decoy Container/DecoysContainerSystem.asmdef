@@ -1,0 +1,18 @@
+{
+    "name": "DecoysContainerSystem",
+    "rootNamespace": "DecoysContainerSystem",
+    "references": [
+        "GUID:71299a2bd26b24047acec23f968e72f3",
+        "GUID:3a2994ed6e1597d44873a32825329d6f",
+        "GUID:f9a1cc6b2a298e741b12c65f62e260c6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

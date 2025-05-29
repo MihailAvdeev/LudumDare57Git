@@ -1,0 +1,16 @@
+{
+    "name": "BasicFillDisplayerImplementations",
+    "rootNamespace": "FillDisplayerImplementations",
+    "references": [
+        "GUID:239186257e2be4a418bd90cb9295ec7f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,17 @@
+{
+    "name": "OxygenConsumerSystem",
+    "rootNamespace": "OxygenConsumerSystem",
+    "references": [
+        "GUID:34ccc1e9c5abf0747920a93d87ca0f52",
+        "GUID:222c5386a7159a0419df8294d84e3e35"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,16 @@
+{
+    "name": "InputActionsManagerSystem",
+    "rootNamespace": "InputActionsManagerSystem",
+    "references": [
+        "GUID:4626180b538ba494197d744e5b252bab"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

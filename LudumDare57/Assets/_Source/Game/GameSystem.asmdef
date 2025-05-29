@@ -1,0 +1,43 @@
+{
+    "name": "GameSystem",
+    "rootNamespace": "GameSystem",
+    "references": [
+        "GUID:34ccc1e9c5abf0747920a93d87ca0f52",
+        "GUID:4818351e47740904e9e40089db662337",
+        "GUID:55a343f8dbddbf34ea365041acc2893c",
+        "GUID:ff14f676cc843d047b9703971c94e029",
+        "GUID:95f0371bc48a41046881ca14489061ca",
+        "GUID:4c7ce04502478934fb2379b9fcd636d2"
+    ],
+    "includePlatforms": [
+        "Android",
+        "Editor",
+        "EmbeddedLinux",
+        "GameCoreScarlett",
+        "GameCoreXboxOne",
+        "iOS",
+        "LinuxStandalone64",
+        "CloudRendering",
+        "macOSStandalone",
+        "PS4",
+        "PS5",
+        "QNX",
+        "Stadia",
+        "Switch",
+        "tvOS",
+        "WSA",
+        "VisionOS",
+        "WebGL",
+        "WindowsStandalone32",
+        "WindowsStandalone64",
+        "XboxOne"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

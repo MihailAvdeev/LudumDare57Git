@@ -1,0 +1,17 @@
+{
+    "name": "DecoyInventoryUIImplementations",
+    "rootNamespace": "DecoyInventoryUISystem",
+    "references": [
+        "GUID:71299a2bd26b24047acec23f968e72f3",
+        "GUID:3a2994ed6e1597d44873a32825329d6f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

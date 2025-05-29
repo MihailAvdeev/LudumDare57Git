@@ -1,0 +1,18 @@
+{
+    "name": "SceneLoaderUISystem",
+    "rootNamespace": "SceneLoaderUISystem",
+    "references": [
+        "GUID:ff14f676cc843d047b9703971c94e029",
+        "GUID:9babfd34f78b00e4a80bc21e0235e5f3",
+        "GUID:239186257e2be4a418bd90cb9295ec7f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

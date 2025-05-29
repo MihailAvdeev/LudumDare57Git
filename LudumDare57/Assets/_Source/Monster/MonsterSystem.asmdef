@@ -1,0 +1,23 @@
+{
+    "name": "MonsterSystem",
+    "rootNamespace": "MonsterSystem",
+    "references": [
+        "GUID:6297e1521b362d3459127441b70fdba1",
+        "GUID:15fc0a57446b3144c949da3e2b9737a9",
+        "GUID:b565c16b5a6d3bb4280e9d4e58f7df18",
+        "GUID:fa0a6afef13fdcc4f8590f75baae6225",
+        "GUID:f61fe22f5570c7a42b1dcb50cfc88b73",
+        "GUID:08b44621cd8474b4daab451ec91db2bf",
+        "GUID:239186257e2be4a418bd90cb9295ec7f",
+        "GUID:5476fe41e13f62a4098d9599ce7d33a3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
