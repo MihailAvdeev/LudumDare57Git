@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &135638388010243126
 Transform:
@@ -101,7 +101,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2266653526496497323
 Transform:
@@ -199,7 +199,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9007671617641246540
 Transform:
@@ -247,7 +247,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2870272025163895477
 Transform:
@@ -302,7 +302,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3983875040479076727
 Transform:
@@ -336,7 +336,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8886354564692938810
 Transform:
@@ -372,7 +372,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &3475609483435398961
 RectTransform:
@@ -472,7 +472,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1990639457082160879
 Transform:
@@ -529,7 +529,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &3399301629315966987
 RectTransform:
@@ -662,7 +662,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2194581843204954939
 Transform:
@@ -747,7 +747,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!224 &139173092792154034
 RectTransform:
@@ -859,6 +859,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scale Division Off (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4500305080936723164, guid: f12cf3bc7c1de1144b5e4b1df1f86926, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -885,6 +889,10 @@ PrefabInstance:
     - target: {fileID: 5865162520415402822, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
       propertyPath: m_Name
       value: Scale Division On
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865162520415402822, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7324479345680776598, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -952,6 +960,10 @@ PrefabInstance:
     - target: {fileID: 5865162520415402822, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
       propertyPath: m_Name
       value: Scale Division On (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865162520415402822, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7324479345680776598, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1060,6 +1072,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scale Division Off (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4500305080936723164, guid: f12cf3bc7c1de1144b5e4b1df1f86926, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1126,6 +1142,10 @@ PrefabInstance:
     - target: {fileID: 4500305080936723164, guid: f12cf3bc7c1de1144b5e4b1df1f86926, type: 3}
       propertyPath: m_Name
       value: Scale Division Off
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500305080936723164, guid: f12cf3bc7c1de1144b5e4b1df1f86926, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1194,6 +1214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scale Division Off (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4500305080936723164, guid: f12cf3bc7c1de1144b5e4b1df1f86926, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1220,6 +1244,10 @@ PrefabInstance:
     - target: {fileID: 5865162520415402822, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
       propertyPath: m_Name
       value: Scale Division On (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865162520415402822, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7324479345680776598, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1328,6 +1356,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scale Division Off (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4500305080936723164, guid: f12cf3bc7c1de1144b5e4b1df1f86926, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1354,6 +1386,10 @@ PrefabInstance:
     - target: {fileID: 5865162520415402822, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
       propertyPath: m_Name
       value: Scale Division On (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865162520415402822, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7324479345680776598, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1421,6 +1457,10 @@ PrefabInstance:
     - target: {fileID: 5865162520415402822, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
       propertyPath: m_Name
       value: Scale Division On (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5865162520415402822, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7324479345680776598, guid: 2cc935e4cbf5f6b46af76296bcd2f9c3, type: 3}
       propertyPath: m_LocalPosition.x
